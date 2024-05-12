@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+<div>
+<!-- <h2>Enter Symptoms</h2> -->
+
+
+<!-- <div class="d-flex justify-content-center align-items-center">
+    <form id="symptoms-form" method="post" action="{{ url_for('symptoms_form') }}">
+        <div>
+            <label for="Cough">Cough:</label>
+            <input type="text" id="Cough" name="Cough">
+        </div>
+        <div>
+            <label for="Fever">Fever:</label>
+            <input type="text" id="Fever" name="Fever">
+        </div>
+        <div>
+            <label for="ShortnessOfBreath">Shortness of breath:</label>
+            <input type="text" id="ShortnessOfBreath" name="Shortness of breath">
+        </div>
+        <div>
+            <label for="ChestPain">Chest pain:</label>
+            <input type="text" id="ChestPain" name="Chest pain">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Predict!</button>
+    </form>
+</div> -->
+
+<div class="wrapper">
+    <div class="title">
+        Enter Symptoms (1: YES -- 2: No)
+    </div>
+    <div class="form">
+        <form id="symptoms-form" method="post" action="{{ url_for('symptoms_form') }}">
+        <div class="inputfield">
+            <label for="Cough">Cough:</label>
+            <input type="text" id="Cough" name="Cough">
+        </div>  
+        <div class="inputfield">
+                <label for="Fever">Fever:</label>
+                <input type="text" id="Fever" name="Fever">
+        </div>  
+        <div class="inputfield">
+            <label for="ShortnessOfBreath">Shortness of breath:</label>
+            <input type="text" id="ShortnessOfBreath" name="Shortness of breath">
+        </div>  
+        <div class="inputfield">
+                <label for="ChestPain">Chest pain:</label>
+                <input type="text" id="ChestPain" name="Chest pain">
+        </div> 
+        
+        <div class="inputfield">
+            <!-- <input type="submit" value="Register" class="btn"> -->
+            <button type="submit" class="btn btn-primary btn-lg">Submit!</button>
+        </div>
+        <div>
+            {% if message %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+        </div>
+    </form>
+    </div>
+    <br><br>
+    <div class="text-right">
+        <!-- Button to redirect to the index page -->
+        <a href="{{ url_for('index') }}">
+            <button class="btn btn-primary btn-lg">Next Page</button>
+        </a>
+    </div>
+</div>
+
+
+
+
+</body>
+{% endblock %}
